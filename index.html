@@ -573,11 +573,8 @@
     transition: background 0.3s ease, box-shadow 0.3s ease;
   }
   .hyp-card:hover, .hyp-card:focus-within {
-    background: var(--canvas); z-index: 20;
+    background: var(--canvas); z-index: 30;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
-  }
-  @media (min-width: 901px) {
-    .hyp-card:hover, .hyp-card:focus-within { border-bottom-left-radius: 0; border-bottom-right-radius: 0; border-bottom-color: transparent; }
   }
   .hyp-card .num { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 999px; margin-bottom: var(--sp-md); white-space: nowrap; }
   .hyp-card h3 {
@@ -592,6 +589,22 @@
     max-height: 0; opacity: 0; overflow: hidden; transition: opacity 0.25s ease; pointer-events: none;
   }
   .hyp-card:hover .hyp-details, .hyp-card:focus-within .hyp-details { max-height: none; opacity: 1; overflow: visible; pointer-events: auto; }
+  @media (min-width: 901px) {
+    /* opened card becomes a wide, horizontal panel: two columns, free to overlap neighbouring closed cards */
+    .hyp-card .hyp-details {
+      top: calc(100% + 8px); margin-top: 0; left: 50%; transform: translateX(-50%);
+      width: min(680px, 60vw); max-width: 680px;
+      border: 1px solid var(--hairline); border-radius: var(--r-lg);
+      box-shadow: var(--sh-elevated);
+      padding: var(--sp-lg);
+      display: grid; grid-template-columns: 1.15fr 1fr; column-gap: var(--sp-lg); row-gap: 0;
+    }
+    .hyp-row .hyp-card:first-child .hyp-details { left: 0; transform: none; }
+    .hyp-row .hyp-card:last-child .hyp-details { left: auto; right: 0; transform: none; }
+    .hyp-card .quote { grid-column: 1; grid-row: 1; }
+    .hyp-card .analysis { grid-column: 1; grid-row: 2; }
+    .hyp-card .hyp-case { grid-column: 2; grid-row: 1 / 3; align-self: start; }
+  }
   .hyp-card .quote { margin-top: var(--sp-md); font-size: 14px; line-height: 1.6; font-style: italic; color: var(--muted); white-space: normal; }
   .hyp-card .analysis { margin-top: var(--sp-md); font-size: 14px; line-height: 1.65; color: var(--body-c); white-space: normal; }
   .hyp-case { margin-top: var(--sp-lg); padding: var(--sp-md); border-radius: var(--r-md); white-space: normal; }
@@ -1220,7 +1233,7 @@
     <div class="prose">
       <div class="kicker-row reveal"><span class="eyebrow">Hypotheses</span></div>
       <h2 class="reveal">Five hypotheses, tested against research</h2>
-      <p class="lede-lg reveal">Five beliefs arrived with the brief. Each was taken seriously enough to check against outside evidence rather than intuition, and each verdict below is what the evidence actually said. Hover a card to read the full finding and the source behind it.</p>
+      <p class="lede-lg reveal">Five assumptions came with the brief. Each was tested against external research rather than intuition, and the findings below reflect what the evidence showed. Hover over each card to see the full finding and its source.</p>
     </div>
 
     <div class="hyp-bleed">
