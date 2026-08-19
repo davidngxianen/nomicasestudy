@@ -4810,7 +4810,7 @@ The simple averaging used here is a placeholder for that future model. It keeps 
           <li><strong>Passive sync from Apple Health or Google Fit.</strong> The tag-correlation engine currently only sees what a person types into Tag Today. Reading in caffeine, workouts, or screen time already logged elsewhere would give it context the ring alone can't capture, without adding a single new question to onboarding.</li>
           <li><strong>Voice check-in.</strong> Typing a tag before getting out of bed is friction at exactly the moment the app most wants a response. A ten-second voice note, transcribed into the same tag format Tag Today already uses, would fit that half-asleep context better than a keyboard does.</li>
           <li><strong>An opt-in partner view.</strong> A couple of testers wanted a low-stakes way to loop in a partner, not the raw numbers, only the day's checklist item, so someone else can nudge them without turning health data into something shared by default.</li>
-          <li><strong>Cycle-aware baselines.</strong> A single rolling baseline can misread a normal mid-cycle HRV dip as a flag. Letting the baseline account for a tracked cycle would keep the honesty the zone bands already promise intact for the users it currently serves least well.</li>
+          
         </ul>
       </div>
 
@@ -4858,14 +4858,16 @@ The simple averaging used here is a placeholder for that future model. It keeps 
             <div class="k">05</div>
             <div class="body">
               <div class="t">Synthesis</div>
-              <div class="d">Task success and SUS from phase two as the usability baseline, curiosity-vs-obligation self-reports and the day 8&ndash;14 return-open rate as the real signal, plotted against each other.</div>
+              <div class="d">Use usability scores from phase two as the baseline, then measure what really matters: whether people feel curious or obligated to use the app, and whether they actually come back between days 8 and 14. Compare these results to see which experience creates stronger long term engagement.</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="section-copy" style="margin-top: var(--sp-lg);">
-        <p class="reveal">The split matters: phase two answers &ldquo;can people use it,&rdquo; phase three answers the question this case study actually opened with, &ldquo;does curiosity keep winning once it's no longer novel.&rdquo; A study that stopped at phase two, the kind I could run alone in an afternoon, would have missed that second question entirely.</p>
+        <p class="reveal">The two phases answer different questions:</p>
+        <p class="reveal">Phase two asks, &ldquo;Can people use the app?&rdquo;<br>Phase three asks, &ldquo;Do people keep coming back because they are genuinely curious, even after the app is no longer new?&rdquo;</p>
+        <p class="reveal">Stopping at phase two would only tell us whether the app is usable. It would not tell us whether the experience actually creates lasting curiosity and engagement.</p>
       </div>
 
       <div class="compare-lead reveal" style="margin-top: var(--sp-xxl);">What I'd test too</div>
